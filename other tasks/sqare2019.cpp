@@ -2,17 +2,14 @@
 
 int main()
 {
-	int n, m, t, cur, prev, h=0;
+	int n, m, t, h=0;
 	std::cin >> n >> m >> t;
-	int used = 2 * (m + n - 2);
-	prev = used;
-	while(used <= t){
+	int c = 2 * (m + n - 2);
+	while(c <= t && c > 0){
 		h++;
-		cur = prev - 4;
-		used += cur;
-		prev = cur;
+		t -= c;
+		c -= 8;
 	}
-	std::cout << h;
-	
+	std::cout << h;	
 	return 0;
 }
